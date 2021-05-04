@@ -19,3 +19,20 @@ export enum Size{
 }
 
 export type SizeKey = keyof typeof Size;
+
+export interface Cash{
+    type: "cash",
+    currency: string;
+};
+
+export interface DebitCard{
+    type: "debit card",
+    code: string;
+};
+
+export interface OnlinePayament{
+    type:"online payament",
+    bankAccount: number;
+}
+
+export type Payamentmethod = Cash | DebitCard | OnlinePayament;
